@@ -1,5 +1,18 @@
 name = "danmu-api"
 main = "danmu_api/worker.js"
-compatibility_date = "2025-09-13"
-keep_vars = true
+compatibility_date = "2025-09-01"
 compatibility_flags = ["nodejs_compat"]
+
+# 生产环境变量（部署时自动带上）
+[vars]
+TOKEN = "87654321"
+DANMU_API_PUBLIC_PROTO = "https"
+UPSTASH_REDIS_REST_URL = ""
+UPSTASH_REDIS_REST_TOKEN = ""
+
+# 本地开发时的变量（wrangler dev 用）
+[vars.dev]
+TOKEN = "87654321"
+
+# 日志级别：debug / info / warn / error
+LOGGER_LEVEL = "info"
